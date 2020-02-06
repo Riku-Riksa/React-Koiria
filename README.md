@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Important dependencies
+### Important if you want to run this project!
 
 ```
 npm install graphql --save
