@@ -1,5 +1,19 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### Important dependencies
+
+```
+npm install graphql --save
+npm install apollo-client --save
+npm install apollo-cache-inmemory --save
+npm install apollo-link-http --save
+npm install react-apollo --save
+npm install graphql-tag --save
+npm install react-bootstrap bootstrap
+
+
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
