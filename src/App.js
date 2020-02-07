@@ -1,11 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Badge from 'react-bootstrap/Badge'
 import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup'
-
+import Grid from '@material-ui/core/grid';
 
 import { useQuery} from '@apollo/react-hooks';
 import gql from "graphql-tag";
@@ -29,22 +27,29 @@ function App() {
   if (error) return <p>Error {error.message}</p>
   return (
     <>
+    <Grid
+  container
+  spacing={0}
+  direction="column"
+  alignItems="center"
+  justify="center"
+  style={{ minHeight: '100vh' }}>
     {data && data.dogs.map((dog, i) => (
       <div key = {i}>
-        <CardGroup style={{}}>
-        <Card bg="secondary" border="dark">
+        <Card bg="secondary" border="dark" style={{width: '26rem', float: 'left'}}>
           <Card.Img variant="top" src={dog.imageUrl}></Card.Img>
           <Card.Body>
             <Card.Title>{dog.name}</Card.Title>
+            <Card.Subtitle>Breed: {dog.breed}</Card.Subtitle>
             <Card.Text>{dog.description}</Card.Text>
           </Card.Body>
-          <Card.Footer>Breed: {dog.breed}</Card.Footer>
           <Badge pill variant ="success">Good boy!</Badge>
         </Card>
-        </CardGroup>
       </div>
     ))}
+    </Grid>
     </>
+  
     
   );
 }
